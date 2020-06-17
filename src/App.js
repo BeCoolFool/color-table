@@ -11,7 +11,7 @@ const App = () => {
 
   const [data, setData] = useState([]);
   const [editing, setEditing] = useState(false);
-  const initialFormState = { id: null, name: "", type: "", colour: "" }
+  const initialFormState = { id: null, name: "", type: "", colour: "", base: "" }
   const [currentColour, setCurrentColour] = useState(initialFormState)
 
   const handleAddColour = (colour) => {
@@ -37,7 +37,7 @@ const App = () => {
 
   const editRow = colour => {
     setEditing(true);
-    setCurrentColour({ id: colour.id, name: colour.name, type: colour.type, colour: colour.colour })
+    setCurrentColour({ id: colour.id, name: colour.name, type: colour.type, colour: colour.colour, base: colour.base})
   }
 
   useEffect(() => {

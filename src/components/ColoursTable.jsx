@@ -15,7 +15,6 @@ const ColorsTable = ({ colours, deleteColour, editRow, setData }) => {
   }, [colours]);
 
   const handleDragStart = (event, idx) => {
-    console.log("i am ", idx);
     dragItem.current = idx;
     dragNode.current = event.target;
     dragNode.current.addEventListener("dragend", handleDragEnd);
@@ -23,7 +22,6 @@ const ColorsTable = ({ colours, deleteColour, editRow, setData }) => {
   };
 
   const handleDragEnd = () => {
-    console.log("ending drag");
     setDragging(false);
     dragNode.current.removeEventListener("dragend", handleDragEnd);
     dragItem.current = null;
@@ -38,7 +36,6 @@ const ColorsTable = ({ colours, deleteColour, editRow, setData }) => {
         newElements.splice(idx, 0, newElements.splice(currentItem, 1)[0]);
         dragItem.current = idx;
         setInLs(newElements);
-        setData(newElements);
         return newElements;
       });
     }

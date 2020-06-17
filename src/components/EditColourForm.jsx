@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { SketchPicker } from "react-color";
 import styles from "./Form.module.css";
+import { validateBase, convertColor } from "../services/validateBase";
 
 const EditColourForm = ({ setEditing, currentColour, updateColour }) => {
   const [colour, setColour] = useState(currentColour);
   const [colorPicker, showColorPicker] = useState(false);
-  const [base, setBase] = useState("rgb");
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -14,15 +14,16 @@ const EditColourForm = ({ setEditing, currentColour, updateColour }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    updateColour(colour.id, colour);
+    validateBase(colour.base, colour.colour)
+      ? updateColour(colour.id, colour)
+      : updateColour(colour.id, {
+          ...colour,
+          colour: convertColor(colour.base, colour.colour),
+        });
   };
 
   const handleColourChange = (color) => {
-    setColour((prev) => ({ ...prev, colour: color[base] }));
-  };
-
-  const handleRadio = (event) => {
-    setBase(event.target.value);
+    setColour((prev) => ({ ...prev, colour: color[colour.base] }));
   };
 
   useEffect(() => {
@@ -67,9 +68,9 @@ const EditColourForm = ({ setEditing, currentColour, updateColour }) => {
               name="base"
               value="rgb"
               id="rgb"
-              onChange={handleRadio}
+              onChange={handleInputChange}
               required
-              defaultChecked
+              defaultChecked={colour.base === "rgb"}
             />
             <label htmlFor="rgb" className={styles.label}>
               RGB
@@ -81,7 +82,8 @@ const EditColourForm = ({ setEditing, currentColour, updateColour }) => {
               name="base"
               value="hex"
               id="hex"
-              onChange={handleRadio}
+              onChange={handleInputChange}
+              defaultChecked={colour.base === "hex"}
             />
             <label htmlFor="hex" className={styles.label}>
               HEX

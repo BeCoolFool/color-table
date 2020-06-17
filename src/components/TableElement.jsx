@@ -12,7 +12,7 @@ const TableElement = ({
   isDrag,
   handleDragEnter,
 }) => {
-  const { name, type, colour, id } = data;
+  const { name, type, colour, id, base } = data;
 
   const handleClick = () => {
     let answer = window.confirm("You sure you want to delete this colour?");
@@ -33,7 +33,7 @@ const TableElement = ({
       <td>{typeof colour === "object" ? rgbaParse(colour) : colour}</td>
       <td>
         <button
-          onClick={() => editRow({ id, name, type, colour })}
+          onClick={() => editRow({ id, name, type, colour, base })}
           className={styles.btn}
         >
           Edit

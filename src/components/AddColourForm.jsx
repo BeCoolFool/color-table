@@ -3,10 +3,15 @@ import { SketchPicker } from "react-color";
 import styles from "./Form.module.css";
 
 const AddColourForm = ({ addColour }) => {
-  const initialFormState = { id: null, name: "", type: "", colour: "" };
+  const initialFormState = {
+    id: null,
+    name: "",
+    type: "",
+    colour: "",
+    base: "rgb",
+  };
   const [colour, setColour] = useState(initialFormState);
   const [colorPicker, showColorPicker] = useState(false);
-  const [base, setBase] = useState("rgb");
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -14,11 +19,7 @@ const AddColourForm = ({ addColour }) => {
   };
 
   const handleColourChange = (color) => {
-    setColour((prev) => ({ ...prev, colour: color[base] }));
-  };
-
-  const handleRadio = (event) => {
-    setBase(event.target.value);
+    setColour((prev) => ({ ...prev, colour: color[colour.base] }));
   };
 
   const handleSubmit = (event) => {
@@ -67,7 +68,7 @@ const AddColourForm = ({ addColour }) => {
               name="base"
               value="rgb"
               id="rgb"
-              onChange={handleRadio}
+              onChange={handleChange}
               required
               defaultChecked
             />
@@ -81,7 +82,7 @@ const AddColourForm = ({ addColour }) => {
               name="base"
               value="hex"
               id="hex"
-              onChange={handleRadio}
+              onChange={handleChange}
             />
             <label htmlFor="hex" className={styles.label}>
               HEX
