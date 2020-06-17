@@ -70,7 +70,7 @@ const App = () => {
           )}
         </div>
         <div className={styles.data}>
-          <h2 className={styles.header}>View Colors</h2>
+          <h2 className={styles.header}>View colors</h2>
           <ColorsTable colours={data} deleteColour={handleDeleteColour} editRow={editRow} setData={setData}/>
         </div>
       </div>
