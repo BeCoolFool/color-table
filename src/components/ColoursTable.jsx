@@ -3,7 +3,7 @@ import TableElement from "./TableElement";
 import styles from "./Table.module.css";
 import setInLs from "../services/setInLs";
 
-const ColorsTable = ({ colours, deleteColour, editRow }) => {
+const ColorsTable = ({ colours, deleteColour, editRow, setData }) => {
   const [elements, setElements] = useState(colours);
   const [dragging, setDragging] = useState(false);
 
@@ -38,6 +38,7 @@ const ColorsTable = ({ colours, deleteColour, editRow }) => {
         newElements.splice(idx, 0, newElements.splice(currentItem, 1)[0]);
         dragItem.current = idx;
         setInLs(newElements);
+        setData(newElements);
         return newElements;
       });
     }

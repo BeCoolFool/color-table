@@ -2,7 +2,6 @@
     border-collapse: collapse;
     text-align: left;
     background-color: #ffffff;
-    padding: 1rem 2rem;
     border-radius: 0.9rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
@@ -10,21 +9,23 @@
 .header {
     font-weight: bold;
     border-bottom: 2px solid #6e7072;
-    padding: 10px 8px;
+    padding: 0.6rem 1rem;
 }
+
 
 td {
     color: #000;
     border-top: 1px solid #dee2e6;
-    padding: 9px 8px;
+    padding: 0.5rem 1rem;
     transition: .3s linear;
 }
 
 tr:hover td {
-    background-color: #dee2e6;
+    background-color: #eff1f3;
 }
 
 .btn {
+    font-family: inherit;
     padding: 5px 10px;
     margin: 5px;
     background-color: #fdce25;
@@ -44,7 +45,7 @@ tr:hover td {
 }
 
 .dnd {
-    opacity: 0.5;
+    opacity: 0.7;
 }
 
 .row {
