@@ -51,7 +51,7 @@ const AddColourForm = ({ addColour }) => {
         onChange={handleChange}
         required
       />
-      <label className={styles.label}>Colour</label>
+      <label className={styles.label}>Color</label>
       <button
         onClick={() => showColorPicker((prev) => !prev)}
         type="button"
@@ -90,7 +90,7 @@ const AddColourForm = ({ addColour }) => {
 
           <SketchPicker onChange={handleColourChange} color={colour.colour} />
           <button className={styles.btn} type="submit">
-            Add new colour
+            Add new color
           </button>
         </React.Fragment>
       ) : null}

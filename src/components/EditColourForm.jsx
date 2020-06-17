@@ -51,7 +51,7 @@ const EditColourForm = ({ setEditing, currentColour, updateColour }) => {
         onChange={handleInputChange}
         required
       />
-      <label className={styles.label}>Colour</label>
+      <label className={styles.label}>Color</label>
       <button
         onClick={() => showColorPicker((prev) => !prev)}
         type="button"

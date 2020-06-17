@@ -55,7 +55,7 @@ const App = () => {
         <div className={styles.control}>
           {editing ? (
           <React.Fragment>
-            <h2 className={styles.header}>Edit colour</h2>
+            <h2 className={styles.header}>Edit color</h2>
             <EditColourForm  
               editing={editing}
               setEditing={setEditing}
@@ -64,13 +64,13 @@ const App = () => {
             />
           </React.Fragment>) : (
           <React.Fragment>
-            <h2 className={styles.header}>Add colour</h2>
+            <h2 className={styles.header}>Add color</h2>
             <AddColourForm addColour={handleAddColour}/>
           </React.Fragment>
           )}
         </div>
         <div className={styles.data}>
-          <h2 className={styles.header}>View Colours</h2>
+          <h2 className={styles.header}>View Colors</h2>
           <ColorsTable colours={data} deleteColour={handleDeleteColour} editRow={editRow} setData={setData}/>
         </div>
       </div>
