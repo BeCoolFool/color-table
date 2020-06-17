@@ -61,36 +61,39 @@ const AddColourForm = ({ addColour }) => {
       </button>
       {colorPicker ? (
         <React.Fragment>
-          <input
-            type="radio"
-            name="base"
-            value="rgb"
-            id="rgb"
-            onChange={handleRadio}
-            required
-            defaultChecked
-          />
-          <label htmlFor="rgb" className={styles.label}>
-            RGB
-          </label>
-
-          <input
-            type="radio"
-            name="base"
-            value="hex"
-            id="hex"
-            onChange={handleRadio}
-          />
-          <label htmlFor="hex" className={styles.label}>
-            HEX
-          </label>
+          <div>
+            <input
+              type="radio"
+              name="base"
+              value="rgb"
+              id="rgb"
+              onChange={handleRadio}
+              required
+              defaultChecked
+            />
+            <label htmlFor="rgb" className={styles.label}>
+              RGB
+            </label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              name="base"
+              value="hex"
+              id="hex"
+              onChange={handleRadio}
+            />
+            <label htmlFor="hex" className={styles.label}>
+              HEX
+            </label>
+          </div>
 
           <SketchPicker onChange={handleColourChange} color={colour.colour} />
+          <button className={styles.btn} type="submit">
+            Add new colour
+          </button>
         </React.Fragment>
       ) : null}
-      <button className={styles.btn} type="submit">
-        Add new colour
-      </button>
     </form>
   );
 };
