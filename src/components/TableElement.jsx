@@ -28,8 +28,8 @@ const TableElement = ({
       onDragEnter={isDrag ? (event) => handleDragEnter(event, idx) : null}
       className={isDrag ? getStyles(idx) : `${styles.row}`}
     >
-      <td>{name}</td>
-      <td>{type}</td>
+      <td className={styles.text}>{name}</td>
+      <td className={styles.text}>{type}</td>
       <td>{typeof colour === "object" ? rgbaParse(colour) : colour}</td>
       <td>
         <button

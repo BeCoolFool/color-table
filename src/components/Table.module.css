@@ -47,3 +47,9 @@ td {
 .row {
     opacity: 1;
 }
+
+.text {
+    overflow: hidden;
+    max-width: 150px;
+    text-overflow: ellipsis;
+}
