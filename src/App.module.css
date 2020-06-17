@@ -1,0 +1,41 @@
+body {
+  background-image: radial-gradient(circle 343px at 46.3% 47.5%, rgba(242, 242, 242, 1) 0%, rgba(241, 241, 241, 1) 72.9%);
+}
+
+.wrapper {
+  max-width: 1024px;
+  margin: 0 auto;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 16px;
+}
+
+.content {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.header {
+  text-align: center;
+}
+
+.btn {
+  padding: 5px 10px;
+  margin: 0 5px;
+  background-color: #fdce25;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: .3s linear;
+}
+
+.btn:hover {
+  background-color: #ffdd2d;
+}
+
+.control,
+.data {
+  margin: 0 auto;
+}
