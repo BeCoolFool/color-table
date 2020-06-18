@@ -11,6 +11,7 @@ const TableElement = ({
   getStyles,
   isDrag,
   handleDragEnter,
+  editing,
 }) => {
   const { name, type, colour, id, base } = data;
 
@@ -23,7 +24,7 @@ const TableElement = ({
 
   return (
     <tr
-      draggable
+      draggable={!editing}
       onDragStart={(event) => handleDragStart(event, idx)}
       onDragEnter={isDrag ? (event) => handleDragEnter(event, idx) : null}
       className={isDrag ? getStyles(idx) : `${styles.row}`}
