@@ -22,6 +22,10 @@
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
+.input:invalid {
+    box-shadow: none;
+}
+
 .input:focus {
     outline: none;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
